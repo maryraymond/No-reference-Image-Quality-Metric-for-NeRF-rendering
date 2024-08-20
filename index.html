@@ -5,51 +5,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No-reference Image Quality Metric for NeRF Rendering</title>
     <style>
+        /* Assigning colors based on the provided palette */
+        :root {
+            --dark-blue: #3c4a5b; /* Adjust based on the exact shade from your image */
+            --mint-green: #b9dac0; /* Adjust based on the exact shade from your image */
+            --off-white: #f2eee9; /* Adjust based on the exact shade from your image */
+        }
+
         body {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
-            background-color: #f4f4f4;
+            background-color: var(--off-white);
             margin: 0;
             padding: 0;
             color: #333;
         }
         header {
-            background: #003366;
+            background: var(--dark-blue);
             color: #fff;
             padding: 20px 0;
             text-align: center;
+            border-bottom: 5px solid var(--mint-green);
+        }
+        header .title-container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2.2em;
+            font-weight: bold;
+            padding: 0 20px;
+            line-height: 1.3em;
         }
-        main {
-            max-width: 900px;
+        .description-container {
+            max-width: 1000px;
             margin: 20px auto;
             padding: 20px;
-            background: #fff;
+            background-color: var(--mint-green);
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .description-container p {
+            margin: 0;
+            font-size: 1.1em;
+            color: var(--dark-blue);
+        }
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: var(--off-white);
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .authors {
-            font-style: italic;
-            margin-bottom: 20px;
-            text-align: center;
+        .section {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: var(--mint-green);
+            border-left: 10px solid var(--dark-blue);
+            border-radius: 8px;
         }
-        .institutions {
-            margin-top: 0;
+        .section h2 {
+            font-size: 1.8em;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+        .section p, .section ol, .section ul {
+            margin: 0 0 15px 0;
+            line-height: 1.5em;
+        }
+        .section ol, .section ul {
             padding-left: 20px;
         }
-        .video-container {
-            margin-top: 30px;
-            text-align: center;
-        }
-        .video-container h2 {
-            font-size: 1.8em;
+        .button-container {
+            margin-top: 20px;
             margin-bottom: 20px;
-            color: #003366;
         }
-        iframe {
+        .button-container a {
+            background-color: var(--off-white);
+            color: var(--dark-blue);
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .button-container a:hover {
+            background-color: #e1ddd4; /* Slightly darker shade of off-white for hover */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .video-container iframe {
             width: 100%;
             height: 500px;
             border-radius: 8px;
@@ -59,7 +107,7 @@
         footer {
             text-align: center;
             padding: 20px 0;
-            background: #003366;
+            background: var(--dark-blue);
             color: #fff;
             position: fixed;
             width: 100%;
@@ -69,18 +117,43 @@
 </head>
 <body>
     <header>
-        <h1>No-reference Image Quality Metric for NeRF (Neural Radiance Fields) Rendering in Automotive Applications</h1>
-    </header>
-    <main>
-        <p class="authors">Mary Raymond (1), Ganesh Sistu (1), Louis Gallagher (2)</p>
-        <ol class="institutions">
-            <li>Valeo Vision Systems</li>
-            <li>Maynooth University</li>
-        </ol>
-        <div class="video-container">
-            <h2>More Results </h2>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Lb8azH79EI0?si=PYY3k_zvtJQ0yKKy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="title-container">
+            <h1>No-reference Image Quality Metric for NeRF (Neural Radiance Fields) Rendering in Automotive Applications</h1>
         </div>
+    </header>
+    <div class="description-container">
+        <p>This paper presents a novel approach for evaluating Neural Radiance Fields (NeRF) on novel views without ground truth by employing the Fréchet Inception Distance (FID) as a no-reference image quality metric. The study shows that FID aligns closely with human visual assessments of novel views, even in situations where traditional full-reference metrics fail to accurately reflect the quality of the rendered novel views.</p>
+    </div>
+    <main>
+        <div class="section">
+            <h2>Authors and Affiliations</h2>
+            <p class="authors">Mary Raymond (1), Ganesh Sistu (1), Louis Gallagher (2)</p>
+            <ol class="institutions">
+                <li>Valeo Vision Systems</li>
+                <li>Maynooth University</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>Paper Access</h2>
+            <div class="button-container">
+                <a href="https://ulcampus-my.sharepoint.com/:b:/r/personal/ciaran_eising_ul_ie/Documents/IMVIP2024/Public/Papers/No-reference%20image%20quality%20metric%20for%20NeRF%20(Neural%20Radiance%20Fields)%20Rendering%20in%20Automotive%20Applications%20.pdf?csf=1&web=1&e=rG7JB5" target="_blank">View the Full Paper</a>
+            </div>
+        </div>
+
+        <!-- Explanation Video Section -->
+        <div class="section video-container">
+            <h2>Explanation Video </h2>
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/Za8IPQja5oM?si=fYydGo1vyAL-wmq7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+        </div>
+
+        <!-- Results Video Section -->
+        <div class="section video-container">
+            <h2>More Results </h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Lb8azH79EI0?si=PYY3k_zvtJQ0yKKy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+       </div>
+
     </main>
+
 </body>
 </html>
